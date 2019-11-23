@@ -11,3 +11,20 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <h1>Solution:</h1>
+  <br />
+  <button (click)="toggleVisible()">Display Details</button>
+  <p *ngIf="isParagraphVisible()">This is a very smart paragraph</p>
+
+  <br />
+  <div *ngFor="let date of togglingEventLog; let i = index">
+    <p 
+      [ngStyle]="{ 'background-color' : i >= 4 ? 'blue' : 'white' }"
+      [ngClass]=" i>=4 ? 'my-class' : '' "
+      > 
+      {{date}} 
+    </p>
+  </div>
+</div>
